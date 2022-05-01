@@ -33,6 +33,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python
+        if: ${{ matrix.qemu == 'no' }}
         uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.python }}
